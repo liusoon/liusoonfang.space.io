@@ -2,42 +2,42 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://examplesite.com/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://liusoonfang.space/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://examplesite.com/categories/"
+                        href="https://liusoonfang.space/categories/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="fr"
-                        href="https://examplesite.com/fr/categories/"
+                        href="https://liusoonfang.space/fr/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://examplesite.com/en/categories/"
+                    href="https://liusoonfang.space/en/categories/"
                     /></url><url>
-            <loc>https://examplesite.com/en/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://liusoonfang.space/en/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://examplesite.com/"
+                        href="https://liusoonfang.space/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="fr"
-                        href="https://examplesite.com/fr/"
+                        href="https://liusoonfang.space/fr/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://examplesite.com/en/"
+                    href="https://liusoonfang.space/en/"
                     /></url><url>
-            <loc>https://examplesite.com/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://liusoonfang.space/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://examplesite.com/tags/"
+                        href="https://liusoonfang.space/tags/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="fr"
-                        href="https://examplesite.com/fr/tags/"
+                        href="https://liusoonfang.space/fr/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://examplesite.com/en/tags/"
+                    href="https://liusoonfang.space/en/tags/"
                     /></url></urlset>
