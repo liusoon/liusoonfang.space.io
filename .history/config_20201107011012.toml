@@ -868,7 +868,7 @@ enableEmoji = true
       # Valine comment config (https://github.com/xCss/Valine)
       # Valine 评论系统设置 (https://github.com/xCss/Valine)
       [params.page.comment.valine]
-         enable = false
+         enable = true
         appId = "pm1V4eubvg507OhqJm4trs5t-MdYXbMMI"
         appKey = "rQxDvnz8sGYp7LTq15XXWk09"
         placeholder = ""
@@ -918,7 +918,7 @@ enableEmoji = true
       # Utterances comment config (https://utteranc.es/)
       # Utterances comment 评论系统设置 (https://utteranc.es/)
       [params.page.comment.utterances]
-        enable = true
+        enable = false
         # owner/repo
         repo = "https://github.com/liusoon/liusoonfang.space.comment.git"
         issueTerm = "pathname"
