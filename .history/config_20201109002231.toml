@@ -920,7 +920,7 @@ enableEmoji = true
       [params.page.comment.utterances]
         enable = true
         # owner/repo
-        repo = "liusoon/liusoonfang.space.comment"
+        repo = "https://github.com/liusoon/liusoonfang.space.comment"
         issueTerm = "pathname"
         label = "✨💬✨"
         lightTheme = "github-light"
