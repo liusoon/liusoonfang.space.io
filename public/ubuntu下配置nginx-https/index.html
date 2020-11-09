@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Ubuntu下配置Nginx https - L.Suyang</title><meta name="Description" content="井字型少年"><meta property="og:title" content="Ubuntu下配置Nginx https" />
+<meta property="og:description" content="井字型少年" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" />
+<meta property="og:image" content="https://liusoonfang.space/logo.png"/>
+<meta property="article:published_time" content="2019-11-09T11:40:25+08:00" />
+<meta property="article:modified_time" content="2019-11-09T11:40:25+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://liusoonfang.space/logo.png"/>
+
+<meta name="twitter:title" content="Ubuntu下配置Nginx https"/>
+<meta name="twitter:description" content="井字型少年"/>
+<meta name="application-name" content="L.Suyang">
+<meta name="apple-mobile-web-app-title" content="L.Suyang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" /><link rel="next" href="https://liusoonfang.space/ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-svn/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ubuntu下配置Nginx https",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/liusoonfang.space\/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/liusoonfang.space\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Nginx, https, ubuntu","wordcount":  1224 ,
+        "url": "https:\/\/liusoonfang.space\/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https\/","datePublished": "2019-11-09T11:40:25+08:00","dateModified": "2019-11-09T11:40:25+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "LIUSOON","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/liusoonfang.space\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "Liusoon"
+            },"description": "井字型少年"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="L.Suyang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>L.SuYang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/liusoon/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="L.Suyang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>L.SuYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/liusoon/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Ubuntu下配置Nginx https</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="liusoonfang.space" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Liusoon</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B8%AA%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw"></i>学个技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-09">2019-11-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1224 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是https">什么是https</a></li>
+        <li><a href="#确认nginx支持openssl模块">确认Nginx支持OpenSSL模块</a></li>
+        <li><a href="#生成证书">生成证书</a>
+          <ul>
+            <li><a href="#自签证书">自签证书</a></li>
+            <li><a href="#ca机构签发证书">CA机构签发证书</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置nginx">配置Nginx</a></li>
+        <li><a href="#重启nginx并验证">重启Nginx并验证</a>
+          <ul>
+            <li><a href="#使用https协议访问网站">使用HTTPS协议访问网站</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="什么是https">什么是https</h3>
+<p> HTTPS(全称：Hypertext Transfer Protocol over Secure Socket Layer)，是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL。它是一个URI scheme(抽象标识符体系)，句法类同http:体系。用于安全的HTTP数据传输。https:URL表明它使用了HTTP，但HTTPS存在不同于HTTP的默认端口及一个加密/身份验证层(在HTTP与TCP之间)。这个系统的最初研发由网景公司进行，提供了身份验证与加密通讯方法，现在它被广泛用于万维网上安全敏感的通讯，例如交易支付方面。</p>
+<h3 id="确认nginx支持openssl模块">确认Nginx支持OpenSSL模块</h3>
+<p> 运行下面命令进行判断：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">nginx -V
+nginx: nginx version: nginx/1.0.0
+nginx: built by gcc 4.4.3 <span class="o">(</span>Ubuntu 4.4.3-4ubuntu5<span class="o">)</span> 
+nginx: TLS SNI support enabled
+nginx: configure arguments: --user<span class="o">=</span>www --group<span class="o">=</span>www --prefix<span class="o">=</span>/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module
+</code></pre></td></tr></table>
+</div>
+</div><p> 如果没有发现–with-http_ssl_module这个编译参数，说明不支持。Nginx默认是不支持SSL的，需要加入–with-http_ssl_module参数重新编译。</p>
+<h3 id="生成证书">生成证书</h3>
+<p> SSL证书是数字证书的一种，类似于驾驶证、护照和营业执照的电子副本。SSL证书通过在客户端浏览器和Web服务器之间建立一条SSL安全通道(Secure socket layer(SSL)安全协议是由Netscape Communication公司设计开发。该安全协议主要用来提供对用户和服务器的认证；对传送的数据进行加密和隐藏；确保数据在传送中不被改变，即数据的完整性，现已成为该领域中全球化的标准。由于SSL技术已建立到所有主要的浏览器和WEB服务器程序中，因此，仅需安装服务器证书就可以激活该功能了)。即通过它可以激活SSL协议，实现数据信息在客户端和服务器之间的加密传输，可以防止数据信息的泄露。保证了双方传递信息的安全性，而且用户可以通过服务器证书验证他所访问的网站是否是真实可靠。</p>
+<h4 id="自签证书">自签证书</h4>
+<p> 具体生成方法参见：[Ubuntu下配置Apache HTTPS]中的生成方法。</p>
+<h4 id="ca机构签发证书">CA机构签发证书</h4>
+<p> CA机构签发证书可以分为付费和免费，付费的不用多说阿里云腾讯云花钱一键搞定。申请免费的StartSSL CA证书可以通过StartSSL(公司名：StartCom也是一家CA机构，它的根证书很久之前就被一些具有开源背景的浏览器支持(Firefox浏览器、谷歌Chrome浏览器、苹果Safari浏览器等)。</p>
+<p> 申请地址：<a href="http://www.startssl.com/" target="_blank" rel="noopener noreffer">http://www.startssl.com</a></p>
+<p> 具体生成的方法不多赘述，可以参照一下两篇文章：</p>
+<blockquote>
+<p>-<a href="http://blog.s135.com/startssl/" target="_blank" rel="noopener noreffer">http://blog.s135.com/startssl/</a><br>
+-<a href="http://www.deepvps.com/apply-startssl-ssl-certificate.html" target="_blank" rel="noopener noreffer">http://www.deepvps.com/apply-startssl-ssl-certificate.html</a></p>
+</blockquote>
+<h3 id="配置nginx">配置Nginx</h3>
+<p> 修改nginx.conf中相应的server段，加入如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">listen 443<span class="p">;</span>
+server_name www.mike.me<span class="p">;</span>
+<span class="c1">#启用SSL模块</span>
+ssl on<span class="p">;</span>
+<span class="c1">#证书文件放置路径</span>
+ssl_certificate /etc/ssl/private/yiji.cer<span class="p">;</span>
+<span class="c1">#私钥文件放置路径</span>
+ssl_certificate_key /etc/ssl/private/yiji.key<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>SSL数字证书路径和域名根据实际情况修改</strong></div>
+        </div>
+    </div>
+<h3 id="重启nginx并验证">重启Nginx并验证</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#测试Nginx主配置文件是否正确</span>
+nginx -t
+<span class="c1">#平滑重启Nginx</span>
+nginx -s reload
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用https协议访问网站">使用HTTPS协议访问网站</h4>
+<p> 访问https://ip或域名，浏览器会弹出安装服务器证明书的窗口,说明服务器已经支持SSL了。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-11-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" data-title="Ubuntu下配置Nginx https" data-via="SllnL" data-hashtags="Nginx,https,ubuntu"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" data-title="Ubuntu下配置Nginx https" data-caption="井字型少年" data-tags="Nginx,https,ubuntu"><i class="fab fa-tumblr fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" data-title="Ubuntu下配置Nginx https"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://liusoonfang.space/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-https/" data-title="Ubuntu下配置Nginx https" data-ralateuid="3816056452"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/nginx/">Nginx</a>,&nbsp;<a href="/tags/https/">https</a>,&nbsp;<a href="/tags/ubuntu/">Ubuntu</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-svn/" class="next" rel="next" title="Ubuntu 下配置 SVN">Ubuntu 下配置 SVN<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.liusoonfang.space" target="_blank">LIUSOON</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"✨💬✨","lightTheme":"github-light","repo":"liusoon/liusoonfang.space.comment"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"Y3CB0OZFD9","algoliaIndex":"liusoonfang.space","algoliaSearchKey":"dea63103dfb4af88ef7f02f3c32f7a65","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-0SDHN5ZWF8', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-0SDHN5ZWF8" async></script></body>
+</html>
