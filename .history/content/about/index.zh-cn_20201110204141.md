@@ -15,7 +15,7 @@ hiddenFromHomePage: true
 hiddenFromSearch: true
 
 featuredImage: ""
-featuredImagePreview: "https://cdn.jsdelivr.net/gh/liusoon/images/20201110181319.png"
+featuredImagePreview: ""
 
 toc: false
   

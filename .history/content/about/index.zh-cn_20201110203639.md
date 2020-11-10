@@ -15,7 +15,7 @@ hiddenFromHomePage: true
 hiddenFromSearch: true
 
 featuredImage: ""
-featuredImagePreview: "https://cdn.jsdelivr.net/gh/liusoon/images/20201110181319.png"
+featuredImagePreview: ""
 
 toc: false
   
@@ -54,4 +54,5 @@ license: ""
 
 &emsp;一生温暖纯良，不舍爱与自由  
 
-![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/20201110181319.png "2000年04月19日")
+{{< style "img { height: 25.6rem; weight:25.6rem; }" >}}
+![little soon](https://cdn.jsdelivr.net/gh/liusoon/images/20201110181319.png "2000年04月19日")
