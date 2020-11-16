@@ -274,7 +274,7 @@ enableEmoji = true
         identifier = "documentation"
         pre = ""
         name = "文档"
-        url = "/categories/文档/" #documentation替换成中文“文档”，或者将md文件中需要归入文档的标记为documentation。
+        url = "/categories/文档/"
         title = ""
         weight = 4
       [[languages.zh-cn.menu.main]]
