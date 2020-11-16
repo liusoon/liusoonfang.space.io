@@ -3,7 +3,7 @@
 
 title: "使用Valine给Hugo博客添加评论系统"
 subtitle: ""
-date: 2020-11-11T23:25:32+08:00
+date: 2019-01-11T23:25:32+08:00
 lastmod: 2020-11-11T23:25:32+08:00
 draft: false
 author: "Liusoon"
