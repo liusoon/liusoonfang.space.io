@@ -1,15 +1,15 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: "keycodelist"
 subtitle: ""
-date: {{ .Date }}
-lastmod: {{ .Date }}
+date: 2020-11-16T19:50:30+08:00
+lastmod: 2020-11-16T19:50:30+08:00
 draft: true
 author: "Liusoon"
 authorLink: "liusoonfang.space"
 description: "井字型少年"
 
-tags: []
-categories: []
+tags: ["keycodelist","via","QMK"]
+categories: [文档]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false

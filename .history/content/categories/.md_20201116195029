@@ -1,8 +1,8 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: ""
 subtitle: ""
-date: {{ .Date }}
-lastmod: {{ .Date }}
+date: 2020-11-16T19:50:30+08:00
+lastmod: 2020-11-16T19:50:30+08:00
 draft: true
 author: "Liusoon"
 authorLink: "liusoonfang.space"

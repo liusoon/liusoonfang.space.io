@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on L.Suyang</title>
+    <link>https://liusoonfang.space/categories/</link>
+    <description>Recent content in Categories on L.Suyang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>liu362604795@gmail.com (LIUSOON)</managingEditor>
+    <webMaster>liu362604795@gmail.com (LIUSOON)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 26 Oct 2020 13:04:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://liusoonfang.space/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keycodelist</title>
+      <link>https://liusoonfang.space/categories/documentation/keycodelist/</link>
+      <pubDate>Thu, 16 Jan 2020 19:50:30 +0800</pubDate>
+      <author>liu362604795@gmail.com (LIUSOON)</author>
+      <guid>https://liusoonfang.space/categories/documentation/keycodelist/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
