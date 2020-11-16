@@ -1,0 +1,177 @@
+# 使用valine给hugo博客添加评论系统
+
+
+<!--more-->
+
+&emsp;接触博客的时间越长就越倾向于简洁化和个性化的搭建，于是经历了从Wordpress、hexo等等一直到现在的Hugo。博客的初衷主要是记录自己的日常生活以及学习过程中的心得体会，当然，能够与人就此交流一些心得体会也是不错的。Hugo本身自带了评论系统 [gitment](https://github.com/imsun/gitment) 的支持，但更喜欢迁移之前在hexo博客中使用的一个非常清新的评论系统—— [Valine](https://valine.js.org/)，于是想着在Hugo中去增加valine作为自己博客的评论系统。
+
+## Valine
+
+### 什么是Valine
+
+&emsp;Valine诞生于2017年8月7日，是一款基于Leancloud的快速、简洁且高效的无后端评论系统。理论上支持但不限于静态博客，目前已有Hexo、Jekyll、Typecho等博客程序在使用Valine。
+
+&emsp;所以，理论上它也是支持 **Hugo** 的。
+
+### Valine的特点
+
+- 快速
+- 安全
+- Emoji 😉
+- 无后端实现
+- MarkDown 全语法支持
+- 轻量易用(~15kb gzipped)
+- 文章阅读量统计 v1.2.0-beta1+
+
+&emsp;这个评论系统对于希望搭建博客，又没有过于复杂需求的来说完全够用。
+
+{{< admonition >}}
+
+**使用Hugo搭建的方法大同小异**
+
+{{< /admonition >}}
+
+## Leancloud配置
+
+&emsp;评论系统依赖于leancloud，所以需要先在leancloud中进行相关的准备工作。
+
+### 1.注册Leancloud
+
+&emsp;注册时请注意右上角的版本选用国际版，否则后续使用自己的域名时会涉及到备案问题。
+
+&emsp;附上国际版注册链接：[Leancloud国际版注册](https://console.leancloud.app/login.html#/signup)
+
+### 2.创建应用
+
+- 登录成功后，进入后台点击左上角的创建应用：
+
+![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/20201116024945.png)
+
+&emsp;
+
+- 创建好应用，进入应用，左边栏找到 **设置** ，然后点击 **应用Key**，此时记录出现的 **App ID** 和 **App Key**，后面配置文件中会用到：    
+
+![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/image-leancloud-key.png)
+
+- 因为评论和文章阅读数统计依赖于存储，所以还需要建立两个新的存储 `Class`，左边栏找到并点击 **存储**，点击 **创建Class**:分别命名为: Counter 和 Comment;==ACL权限设置为限制写入==
+
+![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/image-class.png)
+
+### 3.安全域名设置
+
+- 安全域名，此处配置你自己的域名，配置后仅可在该域名下通过JavaScript SDK 调用服务器资源
+
+![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/image-anquanyuming.png)
+
+- 域名绑定（重点）：
+  - 如果是国际版，不要求绑定自定义域名，可以使用如下共享域名：`appid前八位.api.lncldglobal.com`；也可以绑定自定义域名并且无需备案，一键开启SSL
+  - 如果是国内节点，就需要绑定自定义域名，且根据工信部规定需要备案
+
+![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/image-leanclouddns.png)
+
+## Config.toml添加参数
+
+- 为了使配置更灵活，将 **Valine** 中大部分初始化参数项均设置为配置文件中的参数添加到config.toml中的适当位置
+- 在config.toml文件中找到**[params.gitment]** 
+
+```  toml
+[params.gitment]  # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment 
+owner = ""              # Your GitHub ID
+repo = ""               # The repo to store comments
+clientId = ""           # Your client ID
+clientSecret = ""       # Your client secret
+
+# 这里添加Valine的相关参数
+```
+
+- 添加 **Valine** 参数项：
+
+```toml
+ # Valine.
+ # You can get your appid and appkey from https://leancloud.cn
+ # more info please open https://valine.js.org
+[params.valine]
+ enable = true # true时表示开启评论
+ appId = '你的appId' 
+ appKey = '你的appKey'
+ notify = false  # 用于控制是否开启邮件通知功能，具体参考邮件提醒配置，mail notifier , https://github.com/xCss/Valine/wiki
+ verify = false # 用于控制是否开启评论验证码功能，Verification code
+ avatar = 'mm' # 用于配置评论项中用户头像样式
+ placeholder = '说点什么吧...' # 评论框的提示符
+ visitor = true # 控制是否开启文章阅读数的统计功能
+```
+
+&emsp;以上代码可以实现valine的匿名评论以及文章统计，更多详细的配置可以参照官网的[配置文件](https://valine.js.org/configuration.html)自行修改。
+
+## 修改主题文件（选用）  
+
+目前Hugo的主题基本上都已经适配了Valine、utterances、disqus等主流评论系统，主题文件comments中有相关布局可以不需要修改。  
+
+&emsp;如果主题布局文件中没有Valine的布局设置也没关系，按照下面步骤添加代码即可。
+
+- 在themes文件夹下layouts/partials/comments.html中可以修改评论系统相关的布局文件
+
+```html
+  <!-- gitment -->
+  {{- if .Site.Params.gitment.enable -}}
+  <div id="comments-gitment"></div>
+  <!--这里省略了部分代码-->
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  {{- end }}
+
+  <!--这个位置添加Valine相关代码-->
+```
+
+- 添加的 Valine评论的代码如下：
+
+```html
+  <!-- valine -->
+  {{- if .Site.Params.valine.enable -}}
+  <!-- id 将作为查询条件 -->
+  <span id="{{ .URL | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">1000000</span>
+    <p></p>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '{{ .Site.Params.valine.appId }}',
+        appKey: '{{ .Site.Params.valine.appKey }}',
+        notify: {{ .Site.Params.valine.notify }}, 
+        verify: {{ .Site.Params.valine.verify }}, 
+        avatar:'{{ .Site.Params.valine.avatar }}', 
+        placeholder: '{{ .Site.Params.valine.placeholder }}',
+        visitor: {{ .Site.Params.valine.visitor }}
+    });
+  </script>
+  {{- end }}
+```
+
+{{< admonition >}}
+
+**上述代码中引用了配置文件中的相关参数，后续修改只需要在config.toml中修改即可**
+
+{{< /admonition >}}
+
+- 将配置文件中 **valine** 配置的 `eanble` 设置为 `true` ，本地测试一下，设置成功可以看到一下界面：
+
+![Alt text ](https://cdn.jsdelivr.net/gh/liusoon/images/fuzhi.png)
+
+- 生成静态博客文件，部署到自己的托管平台，正常的话打开博客中的一篇文章，就可以看到正常的文章计数和评论框了。同时，Leancloud中应用`Comment` 和 `Counter`存储中新加了相应网址的条目。
+
+## 评论通知（选用）
+
+&emsp;因为我自己是使用Hugo+netlify进行部署，后台添加了netlify的cms，所以我没有选用Valine的评论通知。并且**Valine** 评论邮件提醒功能不太健全，通知邮件中没有文章直达链接，**Valine** 官网中提供了评论系统第三方功能扩展[Valine](https://github.com/zhaojun1998/Valine-Admin)链接，实现完备的评论系统后台管理以及邮件提醒功能，这里简单列举步骤如下：
+
+- 进入leancloud后台相关应用，**云引擎** 中部署链接中对应的代码；
+- 添加环境变量，此时就可以使用；
+- **云引擎** —— **设置** —— **Web主机域名**，然后进入 **存储** —— **_User** 添加一个用户，只需 User，password，email 三个信息即可，为了安全email必须是第二步中设置的发送邮箱 **SMTP_USER** 或站长邮箱 **TO_EMAIL**;此时可以使用定义的主机域名登录后台管理系统了，用户名为刚设置的邮箱；
+- LeanCloud 休眠策略的话，我自己有一个VPS，所以在VPS中设置了定时任务去唤醒我的leancloud应用，远程登录VPS系统，执行命令`crontab -e` 即可使用vim编辑任务，填入内容`*/20 7-23 * * * curl https://你配置的域名前缀.leanapp.cn`，任务中替换自己的主机域名，保存即可生效；
+
+&emsp;更多高级配置[点我](https://github.com/zhaojun1998/Valine-Admin/blob/master/高级配置.md#自定义邮件服务器)了解。
+
+

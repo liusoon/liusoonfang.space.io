@@ -1,0 +1,28 @@
+---
+title: "hugo博客添加评论系统Valine"
+subtitle: ""
+date: 2020-11-11T23:25:32+08:00
+lastmod: 2020-11-11T23:25:32+08:00
+draft: true
+author: "Liusoon"
+authorLink: "liusoonfang.space"
+description: "井字型少年"
+
+tags: [Hugo]
+categories: []
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+
+featuredImage: ""
+featuredImagePreview: ""
+
+toc: true
+  
+math:
+  enable: false
+lightgallery: false
+license: ""
+---
+
+<!--more-->
