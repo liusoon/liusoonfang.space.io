@@ -1,4 +1,4 @@
-# 使用valine给hugo博客添加评论系统
+# 使用Valine给Hugo博客添加评论系统
 
 
 <!--more-->
