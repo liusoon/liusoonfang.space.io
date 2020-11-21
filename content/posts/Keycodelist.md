@@ -11,7 +11,7 @@ description: "井字型少年"
 tags: ["Keycodelist","Via","QMK"]
 categories: ["文档"]
 
-hiddenFromHomePage: false
+hiddenFromHomePage: true
 hiddenFromSearch: false
 
 featuredImage: ""
