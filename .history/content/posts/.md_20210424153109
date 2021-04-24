@@ -1,15 +1,15 @@
 ---
-title: ""
+title: "校友交流平台线上部署"
 subtitle: ""
-date: 2020-11-09T11:40:25+08:00
-lastmod: 2020-11-09T11:40:25+08:00
+date: 2021-04-24T15:26:36+08:00
+lastmod: 2021-04-24T15:26:36+08:00
 draft: true
 author: "Liusoon"
 authorLink: "liusoonfang.space"
 description: "井字型少年"
 
-tags: []
-categories: []
+tags: ["web项目","maven"]
+categories: ["学个技术"]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -21,7 +21,7 @@ toc: true
   
 math:
   enable: false
-lightgallery: false
+lightgallery: true
 license: ""
 ---
 
