@@ -2,9 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://liusoonfang.space/tags/2020/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://liusoonfang.space/2020%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://liusoonfang.space/categories/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://liusoonfang.space/categories/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://liusoonfang.space/en/categories/"
@@ -17,7 +15,7 @@
                     hreflang="zh-cn"
                     href="https://liusoonfang.space/categories/"
                     /></url><url>
-            <loc>https://liusoonfang.space/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://liusoonfang.space/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://liusoonfang.space/en/"
@@ -30,8 +28,9 @@
                     hreflang="zh-cn"
                     href="https://liusoonfang.space/"
                     /></url><url>
-            <loc>https://liusoonfang.space/posts/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://liusoonfang.space/tags/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://liusoonfang.space/tags/maven/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://liusoonfang.space/posts/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://liusoonfang.space/tags/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://liusoonfang.space/en/tags/"
@@ -44,6 +43,11 @@
                     hreflang="zh-cn"
                     href="https://liusoonfang.space/tags/"
                     /></url><url>
+            <loc>https://liusoonfang.space/tags/web%E9%A1%B9%E7%9B%AE/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://liusoonfang.space/categories/%E5%AD%A6%E4%B8%AA%E6%8A%80%E6%9C%AF/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/</loc><lastmod>2021-04-24T15:26:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://liusoonfang.space/tags/2020/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://liusoonfang.space/2020%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/categories/%E5%8F%91%E4%B8%AA%E7%A5%9E%E7%BB%8F/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/tags/%E9%9A%8F%E7%AC%94/</loc><lastmod>2020-12-31T13:47:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/categories/%E5%85%BB%E4%B8%AA%E5%B4%BD%E5%B4%BD/</loc><lastmod>2020-11-16T21:47:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -61,7 +65,6 @@
             <loc>https://liusoonfang.space/%E7%A2%B0%E7%93%B7%E8%AE%B0/</loc><lastmod>2020-11-09T00:55:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/tags/sql/</loc><lastmod>2020-01-21T02:52:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/sql%E8%AF%A6%E8%A7%A3/</loc><lastmod>2020-01-21T02:52:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://liusoonfang.space/categories/%E5%AD%A6%E4%B8%AA%E6%8A%80%E6%9C%AF/</loc><lastmod>2020-11-11T23:25:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc><lastmod>2020-01-21T02:52:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/categories/%E6%96%87%E6%A1%A3/</loc><lastmod>2020-11-22T05:10:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://liusoonfang.space/tags/keycodelist/</loc><lastmod>2020-11-22T05:10:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

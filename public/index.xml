@@ -4,9 +4,16 @@
         <link>https://liusoonfang.space/</link>
         <description>blog with hugo themes-loveit</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>liu362604795@gmail.com (LIUSOON)</managingEditor>
-            <webMaster>liu362604795@gmail.com (LIUSOON)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 31 Dec 2020 13:47:33 &#43;0800</lastBuildDate>
+            <webMaster>liu362604795@gmail.com (LIUSOON)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 19 Apr 2021 15:26:36 &#43;0800</lastBuildDate>
             <atom:link href="https://liusoonfang.space/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>校友交流平台线上部署</title>
+    <link>https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/</link>
+    <pubDate>Mon, 19 Apr 2021 15:26:36 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/</guid>
+    <description><![CDATA[井字型少年]]></description>
+</item><item>
     <title>2020的最后一天</title>
     <link>https://liusoonfang.space/2020%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/</link>
     <pubDate>Thu, 31 Dec 2020 13:47:33 &#43;0800</pubDate>
@@ -68,13 +75,6 @@
     <pubDate>Wed, 10 Jul 2019 13:03:07 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://liusoonfang.space/ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-svn/</guid>
-    <description><![CDATA[井字型少年]]></description>
-</item><item>
-    <title>使用Valine给Hugo博客添加评论系统</title>
-    <link>https://liusoonfang.space/%E4%BD%BF%E7%94%A8valine%E7%BB%99hugo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
-    <pubDate>Fri, 11 Jan 2019 23:25:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://liusoonfang.space/%E4%BD%BF%E7%94%A8valine%E7%BB%99hugo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</guid>
     <description><![CDATA[井字型少年]]></description>
 </item></channel>
 </rss>

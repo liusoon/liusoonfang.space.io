@@ -1,29 +1,5 @@
----
-title: "校友交流平台线上部署"
-subtitle: ""
-date: 2021-04-19T15:26:36+08:00
-lastmod: 2021-04-24T15:26:36+08:00
-draft: false
-author: "Liusoon"
-authorLink: "liusoonfang.space"
-description: "井字型少年"
+# 校友交流平台线上部署
 
-tags: ["web项目","maven"]
-categories: ["学个技术"]
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-
-featuredImage: ""
-featuredImagePreview: ""
-
-toc: true
-  
-math:
-  enable: false
-lightgallery: true
-license: ""
----
 
 <!--more-->
 
@@ -119,7 +95,131 @@ echo $JAVA_HOME
 
 &emsp;如果数据库用户名密码和项目中**ar-parent\ar-portal\src\main\resources\config.properties**中不一致，则修改项目配置并重新编译上传服务器。
 
-![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png "校友交流平台数据库")
+### 2.1 安装JDK1.8
+
+&emsp;添加Oracle的PPA(Personal Package Archive)，
+
+```
+sudo add-apt-repository ppa:webupd8team/java
+```
+
+&emsp;添加完成后依次执行如下命令：
+
+```
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+
+&emsp;安装成功后验证下：
+
+```
+javac -version
+```
+
+&emsp;设置java的环境变量：
+
+```
+sudo vim /etc/environment
+```
+
+&emsp;文件末尾添加如下内容（替换自己的java路径）：
+
+```
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+```
+
+
+
+&emsp;最后重载环境变量：
+
+```
+source /etc/environment
+echo $JAVA_HOME
+```
+
+
+
+### 2.2 安装tomcat
+
+&emsp;下载[Tomcat8.5](http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-fulldocs.tar.gz)至服务器，建议放在 /opt/ 目录下解压缩即可。
+
+&emsp;tomcat默认使用8080端口，可在conf/server.xml中配置端口，
+
+```
+<Connector executor="tomcatThreadPool"
+   port="8080" protocol="HTTP/1.1"
+   connectionTimeout="20000"
+   redirectPort="8443" />
+```
+
+### 2.3 安装MySQL5.1数据库
+
+&emsp;安装MySQL5.1数据库，使用可视化[客户端Navicat等](http://pic.blackist.top/spring-ar-deploy-path-NavicatPro.zip)新建ar数据库，编码utf-t，导入数据库表结构ar-mysql-data.sql。
+
+&emsp;如果数据库用户名密码和项目中**ar-parent\ar-portal\src\main\resources\config.properties**中不一致，则修改项目配置并重新编译上传服务器。
+
+### 2.1 安装JDK1.8
+
+&emsp;添加Oracle的PPA(Personal Package Archive)，
+
+```
+sudo add-apt-repository ppa:webupd8team/java
+```
+
+&emsp;添加完成后依次执行如下命令：
+
+```
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+
+&emsp;安装成功后验证下：
+
+```
+javac -version
+```
+
+&emsp;设置java的环境变量：
+
+```
+sudo vim /etc/environment
+```
+
+&emsp;文件末尾添加如下内容（替换自己的java路径）：
+
+```
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+```
+
+
+
+&emsp;最后重载环境变量：
+
+```
+source /etc/environment
+echo $JAVA_HOME
+```
+
+
+
+### 2.2 安装tomcat
+
+&emsp;下载[Tomcat8.5](http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-fulldocs.tar.gz)至服务器，建议放在 /opt/ 目录下解压缩即可。
+
+&emsp;tomcat默认使用8080端口，可在conf/server.xml中配置端口，
+
+```
+<Connector executor="tomcatThreadPool"
+   port="8080" protocol="HTTP/1.1"
+   connectionTimeout="20000"
+   redirectPort="8443" />
+```
+
+### 2.3 安装MySQL5.1数据库
+
+&emsp;安装MySQL5.1数据库，使用可视化[客户端Navicat等](http://pic.blackist.top/spring-ar-deploy-path-NavicatPro.zip)新建ar数据库，编码utf-t，导入数据库表结构ar-mysql-data.sql。
+
+&emsp;如果数据库用户名密码和项目中**ar-parent\ar-portal\src\main\resources\config.properties**中不一致，则修改项目配置并重新编译上传服务器。![Alt text](https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png "校友交流平台数据库")
 
 ## 三、应用发布
 
@@ -232,4 +332,5 @@ server {
 ```
 
 &emsp;即当通过域名访问时，访问被代理到本地tomcat的localhost:8080服务，通过域名[http://tomcat.blackist.top/ar-portal](http://tomcat.blackist.top/ar-portal/index.action)即可访问到部署在服务器上的Web应用。
+
 

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>校友交流平台线上部署 - L.Suyang</title><meta name="Description" content="井字型少年"><meta property="og:title" content="校友交流平台线上部署" />
+<meta property="og:description" content="井字型少年" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" />
+<meta property="og:image" content="https://liusoonfang.space/logo.png"/>
+<meta property="article:published_time" content="2021-04-19T15:26:36+08:00" />
+<meta property="article:modified_time" content="2021-04-24T15:26:36+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://liusoonfang.space/logo.png"/>
+
+<meta name="twitter:title" content="校友交流平台线上部署"/>
+<meta name="twitter:description" content="井字型少年"/>
+<meta name="application-name" content="L.Suyang">
+<meta name="apple-mobile-web-app-title" content="L.Suyang"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" /><link rel="prev" href="https://liusoonfang.space/2020%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "校友交流平台线上部署",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/liusoonfang.space\/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/liusoonfang.space\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "web项目, maven","wordcount":  2814 ,
+        "url": "https:\/\/liusoonfang.space\/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2\/","datePublished": "2021-04-19T15:26:36+08:00","dateModified": "2021-04-24T15:26:36+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "LIUSOON","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/liusoonfang.space\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "Liusoon"
+            },"description": "井字型少年"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="L.Suyang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>L.SuYang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/%E6%96%87%E6%A1%A3/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/liusoon" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="L.Suyang"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>L.SuYang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/%E6%96%87%E6%A1%A3/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/liusoon" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">校友交流平台线上部署</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="liusoonfang.space" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Liusoon</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B8%AA%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw"></i>学个技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-19">2021-04-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2814 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一项目编译">一、项目编译</a></li>
+    <li><a href="#二服务器配置">二、服务器配置</a>
+      <ul>
+        <li><a href="#21-安装jdk18">2.1 安装JDK1.8</a></li>
+        <li><a href="#22-安装tomcat">2.2 安装tomcat</a></li>
+        <li><a href="#23-安装mysql51数据库">2.3 安装MySQL5.1数据库</a></li>
+        <li><a href="#21-安装jdk18-1">2.1 安装JDK1.8</a></li>
+        <li><a href="#22-安装tomcat-1">2.2 安装tomcat</a></li>
+        <li><a href="#23-安装mysql51数据库-1">2.3 安装MySQL5.1数据库</a></li>
+        <li><a href="#21-安装jdk18-2">2.1 安装JDK1.8</a></li>
+        <li><a href="#22-安装tomcat-2">2.2 安装tomcat</a></li>
+        <li><a href="#23-安装mysql51数据库-2">2.3 安装MySQL5.1数据库</a></li>
+      </ul>
+    </li>
+    <li><a href="#三应用发布">三、应用发布</a>
+      <ul>
+        <li><a href="#31-war包发布">3.1 war包发布</a></li>
+        <li><a href="#32-静态资源路径">3.2 静态资源路径</a></li>
+        <li><a href="#33-js中处理环境路径">3.3 js中处理环境路径</a></li>
+      </ul>
+    </li>
+    <li><a href="#四nginx域名解析">四、Nginx域名解析</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> 校友交流平台作为一个具备门户网站服务、后台管理功能的完整项目，可以部署上线使用，线上部署需要注意些事项，本文就开发过程做个记录。</p>
+<h2 id="一项目编译">一、项目编译</h2>
+<p>校友交流平台是基于maven构建的多模块项目，ar-parent是父模块，ar-common、ar-manage、ar-portal是子模块，ar-common中主要存放一些实体类、与数据库交互的Mapper文件以及一些基类和工具类，ar-manage、ar-portal皆依赖ar-common，在编译时需要首先编译ar-common并安装到本地，但其实编辑顺序maven可以自行判断，只需要执行编译命令即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">├─ar-parent
+   ├─ar-common
+   ├─ar-manage
+   └─ar-portal
+</code></pre></td></tr></table>
+</div>
+</div><p> 该项目配置了maven编译插件<strong>maven-war-plugin</strong>，推荐在本地编译项目不建议在服务器构建，项目将以war包的形式部署到tomcat，在ar-parent目录下执行编译命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mvn clean &amp;&amp; mvn install &amp;&amp; mvn package
+</code></pre></td></tr></table>
+</div>
+</div><p> 编译完成后可看到如下日志：</p>
+<p><figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png" title="Alt text" data-thumbnail="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png" data-sub-html="<h2>项目构建</h2><p>Alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png"
+            data-srcset="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png, https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png 1.5x, https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png 2x"
+            data-sizes="auto"
+            alt="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-compile-ok.png" />
+    </a><figcaption class="image-caption">项目构建</figcaption>
+    </figure></p>
+<p> 构建好的ar-portal.war在ar-parent/ar-portal/target/目录下。</p>
+<h2 id="二服务器配置">二、服务器配置</h2>
+<p> 本文以服务器Ubuntu16.04，JDK1.8，Tomcat8.5为例</p>
+<h3 id="21-安装jdk18">2.1 安装JDK1.8</h3>
+<p> 添加Oracle的PPA(Personal Package Archive)，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo add-apt-repository ppa:webupd8team/java
+</code></pre></td></tr></table>
+</div>
+</div><p> 添加完成后依次执行如下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get install oracle-java8-installer
+</code></pre></td></tr></table>
+</div>
+</div><p> 安装成功后验证下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">javac -version
+</code></pre></td></tr></table>
+</div>
+</div><p> 设置java的环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo vim /etc/environment
+</code></pre></td></tr></table>
+</div>
+</div><p> 文件末尾添加如下内容（替换自己的java路径）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">JAVA_HOME=&#34;/usr/lib/jvm/java-8-oracle&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p> 最后重载环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">source /etc/environment
+echo $JAVA_HOME
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-安装tomcat">2.2 安装tomcat</h3>
+<p> 下载<a href="http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-fulldocs.tar.gz" target="_blank" rel="noopener noreffer">Tomcat8.5</a>至服务器，建议放在 /opt/ 目录下解压缩即可。</p>
+<p> tomcat默认使用8080端口，可在conf/server.xml中配置端口，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector executor=&#34;tomcatThreadPool&#34;
+   port=&#34;8080&#34; protocol=&#34;HTTP/1.1&#34;
+   connectionTimeout=&#34;20000&#34;
+   redirectPort=&#34;8443&#34; /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="23-安装mysql51数据库">2.3 安装MySQL5.1数据库</h3>
+<p> 安装MySQL5.1数据库，使用可视化<a href="http://pic.blackist.top/spring-ar-deploy-path-NavicatPro.zip" target="_blank" rel="noopener noreffer">客户端Navicat等</a>新建ar数据库，编码utf-t，导入数据库表结构ar-mysql-data.sql。</p>
+<p> 如果数据库用户名密码和项目中<strong>ar-parent\ar-portal\src\main\resources\config.properties</strong>中不一致，则修改项目配置并重新编译上传服务器。</p>
+<h3 id="21-安装jdk18-1">2.1 安装JDK1.8</h3>
+<p> 添加Oracle的PPA(Personal Package Archive)，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo add-apt-repository ppa:webupd8team/java
+</code></pre></td></tr></table>
+</div>
+</div><p> 添加完成后依次执行如下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get install oracle-java8-installer
+</code></pre></td></tr></table>
+</div>
+</div><p> 安装成功后验证下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">javac -version
+</code></pre></td></tr></table>
+</div>
+</div><p> 设置java的环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo vim /etc/environment
+</code></pre></td></tr></table>
+</div>
+</div><p> 文件末尾添加如下内容（替换自己的java路径）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">JAVA_HOME=&#34;/usr/lib/jvm/java-8-oracle&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p> 最后重载环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">source /etc/environment
+echo $JAVA_HOME
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-安装tomcat-1">2.2 安装tomcat</h3>
+<p> 下载<a href="http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-fulldocs.tar.gz" target="_blank" rel="noopener noreffer">Tomcat8.5</a>至服务器，建议放在 /opt/ 目录下解压缩即可。</p>
+<p> tomcat默认使用8080端口，可在conf/server.xml中配置端口，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector executor=&#34;tomcatThreadPool&#34;
+   port=&#34;8080&#34; protocol=&#34;HTTP/1.1&#34;
+   connectionTimeout=&#34;20000&#34;
+   redirectPort=&#34;8443&#34; /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="23-安装mysql51数据库-1">2.3 安装MySQL5.1数据库</h3>
+<p> 安装MySQL5.1数据库，使用可视化<a href="http://pic.blackist.top/spring-ar-deploy-path-NavicatPro.zip" target="_blank" rel="noopener noreffer">客户端Navicat等</a>新建ar数据库，编码utf-t，导入数据库表结构ar-mysql-data.sql。</p>
+<p> 如果数据库用户名密码和项目中<strong>ar-parent\ar-portal\src\main\resources\config.properties</strong>中不一致，则修改项目配置并重新编译上传服务器。</p>
+<h3 id="21-安装jdk18-2">2.1 安装JDK1.8</h3>
+<p> 添加Oracle的PPA(Personal Package Archive)，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo add-apt-repository ppa:webupd8team/java
+</code></pre></td></tr></table>
+</div>
+</div><p> 添加完成后依次执行如下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get install oracle-java8-installer
+</code></pre></td></tr></table>
+</div>
+</div><p> 安装成功后验证下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">javac -version
+</code></pre></td></tr></table>
+</div>
+</div><p> 设置java的环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo vim /etc/environment
+</code></pre></td></tr></table>
+</div>
+</div><p> 文件末尾添加如下内容（替换自己的java路径）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">JAVA_HOME=&#34;/usr/lib/jvm/java-8-oracle&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p> 最后重载环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">source /etc/environment
+echo $JAVA_HOME
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-安装tomcat-2">2.2 安装tomcat</h3>
+<p> 下载<a href="http://apache.cs.utah.edu/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38-fulldocs.tar.gz" target="_blank" rel="noopener noreffer">Tomcat8.5</a>至服务器，建议放在 /opt/ 目录下解压缩即可。</p>
+<p> tomcat默认使用8080端口，可在conf/server.xml中配置端口，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector executor=&#34;tomcatThreadPool&#34;
+   port=&#34;8080&#34; protocol=&#34;HTTP/1.1&#34;
+   connectionTimeout=&#34;20000&#34;
+   redirectPort=&#34;8443&#34; /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="23-安装mysql51数据库-2">2.3 安装MySQL5.1数据库</h3>
+<p> 安装MySQL5.1数据库，使用可视化<a href="http://pic.blackist.top/spring-ar-deploy-path-NavicatPro.zip" target="_blank" rel="noopener noreffer">客户端Navicat等</a>新建ar数据库，编码utf-t，导入数据库表结构ar-mysql-data.sql。</p>
+<p> 如果数据库用户名密码和项目中<strong>ar-parent\ar-portal\src\main\resources\config.properties</strong>中不一致，则修改项目配置并重新编译上传服务器。<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png" title="Alt text" data-thumbnail="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png" data-sub-html="<h2>校友交流平台数据库</h2><p>Alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png"
+            data-srcset="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png, https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png 1.5x, https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png 2x"
+            data-sizes="auto"
+            alt="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-mysql-config.png" />
+    </a><figcaption class="image-caption">校友交流平台数据库</figcaption>
+    </figure></p>
+<h2 id="三应用发布">三、应用发布</h2>
+<h3 id="31-war包发布">3.1 war包发布</h3>
+<p> war放在tomcat的webapps/目录下，执行tomcat/bin/下的./startup.sh，tomcat即可启动。</p>
+<p> 启动过程中可能出现异常，此时可监听tomcat日志，在tomcat/logs/下执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">tail -f catalina.out
+</code></pre></td></tr></table>
+</div>
+</div><p> 监听到如下日志，说明项目启动成功：</p>
+<p><figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png" title="Alt text" data-thumbnail="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png" data-sub-html="<h2>校友交流平台启动</h2><p>Alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png"
+            data-srcset="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png, https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png 1.5x, https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png 2x"
+            data-sizes="auto"
+            alt="https://cdn.jsdelivr.net/gh/liusoon/images/spring-ar-deploy-path-project-init.png" />
+    </a><figcaption class="image-caption">校友交流平台启动</figcaption>
+    </figure></p>
+<h3 id="32-静态资源路径">3.2 静态资源路径</h3>
+<p> 最初开发的时候，jsp页面中采用如下配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;%
+	// 获取ar-portal
+	String path = request.getContextPath();
+	// 获取 http://localhost:8080/
+	String basePath = request.getScheme() + &#34;://&#34; + request.getServerName() + &#34;:&#34; + request.getServerPort()
+			+ path + &#34;/&#34;;
+%&gt;
+
+&lt;base href=&#34;&lt;%=basePath%&gt;&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p> 如此，页面中的静态资源文件、a标签超链接和Form的action都以<a href="https://blackist.org/2019/03/09/javaweb-ar-deploy-path/" target="_blank" rel="noopener noreffer">http://localhost:8080/ar-portal/</a>作为基础路径，在本地开发没有任何个问题，当部署到服务器时网站界面一篇空白，我的大脑一阵抽搐，知道肯定是路径出了问题。</p>
+<p> 经过排查就是这个basePath引起的，部署到公网服务器资源路径应该是<a href="https://blackist.org/2019/03/09/javaweb-ar-deploy-path/" target="_blank" rel="noopener noreffer">http://公网ip:8080/ar-portal/</a>，可界面中静态资源等的路径依然是localhost…</p>
+<p> 解决路径问题较好的实践是在路径前加入项目环境路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;icon&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;image/jpg&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;assets/images/logo/title-logo.jpg&#34;</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- 静态资源路径加入Spring的环境路径 ${pageContext.request.contextPath} --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;icon&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;image/jpg&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;${pageContext.request.contextPath}/assets/images/logo/title-logo.jpg&#34;</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;ta/show.action?userId=${member.userId}&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;min-height: 125px;&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;${member.portrait}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;img-responsive center-block&#34;</span>
+             <span class="na">style</span><span class="o">=</span><span class="s">&#34;max-height: 125px;&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        ${member.trueName}
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;icon&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;image/jpg&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;assets/images/logo/title-logo.jpg&#34;</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- a标签超链接加入Spring的环境路径 ${pageContext.request.contextPath} --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;${pageContext.request.contextPath}/ta/show.action?userId=${member.userId}&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;min-height: 125px;&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;${member.portrait}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;img-responsive center-block&#34;</span>
+             <span class="na">style</span><span class="o">=</span><span class="s">&#34;max-height: 125px;&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        ${member.trueName}
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="33-js中处理环境路径">3.3 js中处理环境路径</h3>
+<p> 独立的js文件无法通过 ${pageContext.request.contextPath} 获取环境路径，可以通过location获取contextPath，如下getContextPath()可放在全局js中，这样在任意文件中都可以调用此方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="err">/**</span>
+ <span class="err">*</span> <span class="err">获取</span> <span class="err">contextPath</span>
+ <span class="err">*</span> <span class="err">@returns</span> <span class="p">{</span><span class="err">string</span><span class="p">}</span>
+ <span class="err">*/</span>
+<span class="err">function</span> <span class="err">getContextPath()</span> <span class="p">{</span>
+    <span class="err">var</span> <span class="err">pathName</span> <span class="err">=</span> <span class="err">document.location.pathname;</span>
+    <span class="err">var</span> <span class="err">index</span> <span class="err">=</span> <span class="err">pathName.substr(1).indexOf(</span><span class="nt">&#34;/&#34;</span><span class="err">);</span>
+    <span class="err">var</span> <span class="err">result</span> <span class="err">=</span> <span class="err">pathName.substr(</span><span class="mi">0</span><span class="p">,</span> <span class="err">index</span> <span class="err">+</span> <span class="err">1);</span>
+    <span class="err">return</span> <span class="err">result;</span>
+<span class="p">}</span>
+
+
+<span class="err">$.post(&#39;classroom/joinClass.action&#39;,</span> <span class="p">{</span>
+	<span class="nt">&#34;userId&#34;</span> <span class="p">:</span> <span class="err">userId</span><span class="p">,</span>
+	<span class="nt">&#34;classId&#34;</span> <span class="p">:</span> <span class="err">classId</span>
+<span class="p">}</span><span class="err">,</span> <span class="err">function(data)</span> <span class="p">{</span>
+	<span class="err">window.location.reload();</span>
+<span class="p">}</span><span class="err">);</span>
+<span class="err">//</span> <span class="err">在ajax的url中加入环境路径</span>
+<span class="err">$.post(getContextPath()</span> <span class="err">+</span> <span class="err">&#39;/classroom/joinClass.action&#39;,</span> <span class="p">{</span>
+	<span class="nt">&#34;userId&#34;</span> <span class="p">:</span> <span class="err">userId</span><span class="p">,</span>
+	<span class="nt">&#34;classId&#34;</span> <span class="p">:</span> <span class="err">classId</span>
+<span class="p">}</span><span class="err">,</span> <span class="err">function(data)</span> <span class="p">{</span>
+	<span class="err">window.location.reload();</span>
+<span class="p">}</span><span class="err">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p> 整个项目jsp、js的路径翻修一通，那可真是酸爽。</p>
+<h2 id="四nginx域名解析">四、Nginx域名解析</h2>
+<p> 自行安装nginx软件，域名商控制台设置域名解析到服务器ip，在/etc/nginx/conf.d/下新建配置文件，文件名任意以.conf结尾即可，如tomcat.conf，配置文件中添加如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="err">server</span> <span class="p">{</span>
+        <span class="err">server_name</span> <span class="err">tomcat.blackist.top;</span>
+        <span class="err">listen</span>      <span class="err">80;</span>
+        
+        <span class="err">location</span> <span class="err">/</span> <span class="err">{</span>
+                <span class="err">proxy_pass</span> <span class="err">http://localhost:8080;</span>
+        <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p> 即当通过域名访问时，访问被代理到本地tomcat的localhost:8080服务，通过域名<a href="http://tomcat.blackist.top/ar-portal/index.action" target="_blank" rel="noopener noreffer">http://tomcat.blackist.top/ar-portal</a>即可访问到部署在服务器上的Web应用。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-04-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" data-title="校友交流平台线上部署" data-via="SllnL" data-hashtags="web项目,maven"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" data-title="校友交流平台线上部署" data-caption="井字型少年" data-tags="web项目,maven"><i class="fab fa-tumblr fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" data-title="校友交流平台线上部署"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://liusoonfang.space/%E6%A0%A1%E5%8F%8B%E4%BA%A4%E6%B5%81%E5%B9%B3%E5%8F%B0%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" data-title="校友交流平台线上部署" data-ralateuid="3816056452"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/web%E9%A1%B9%E7%9B%AE/">web项目</a>,&nbsp;<a href="/tags/maven/">maven</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%A4%A9/" class="prev" rel="prev" title="2020的最后一天"><i class="fas fa-angle-left fa-fw"></i>2020的最后一天</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.liusoonfang.space" target="_blank">LIUSOON</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"✨💬✨","lightTheme":"github-light","repo":"liusoon/liusoonfang.space.comment"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"Y3CB0OZFD9","algoliaIndex":"liusoonfang.space","algoliaSearchKey":"dea63103dfb4af88ef7f02f3c32f7a65","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-0SDHN5ZWF8', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-0SDHN5ZWF8" async></script></body>
+</html>
